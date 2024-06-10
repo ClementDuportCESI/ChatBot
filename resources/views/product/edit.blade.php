@@ -15,6 +15,7 @@
   
     <form action="{{ route('product.update', $product) }}" method="post" enctype="multipart/form-data">
         @csrf
+        @method('PUT')
         <div class="mb-4">
             <label for="name" class="font-title block text-m font-semibold leading-6 text-gray-900">Nom</label>
             @error("name")
