@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UpdateKeywordRequest;
 use App\Http\Requests\CreateKeywordRequest;
 use App\Models\Keyword;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class KeywordController extends Controller
@@ -12,8 +13,8 @@ class KeywordController extends Controller
 
     public function index()
     {
-        $keywords = Keyword::paginate(10);
-        return view('keyword.index', ["keywords" => $keywords]);
+        $keywords = Keyword::orderBy('created_at', 'desc')->paginate(10);
+        return view('keyword.index', ['keywords' => $keywords]);
     }
 
     public function search(Request $request)
@@ -33,19 +34,22 @@ class KeywordController extends Controller
      */
     public function create()
     {
-        return view('keyword.create');
+        $products = Product::all();
+        return view('keyword.create', compact('products'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CreateKeywordRequest $request)
+   public function store(CreateKeywordRequest $request)
     {
-        $keywords = Keyword::create(
-            $request->validated()
-        );
+        $keyword = Keyword::create($request->validated());
 
-        return redirect()->route("keyword.index", $keywords);
+        if ($request->has('products')) {
+            $keyword->products()->attach($request->products);
+        }
+
+        return redirect()->route('keyword.index');
     }
 
     /**
@@ -53,18 +57,27 @@ class KeywordController extends Controller
      */
     public function edit(Keyword $keyword)
     {
-        
-        return view('keyword.edit', compact("keyword"),);
+        $products = Product::all();
+        return view('keyword.edit', compact('keyword', 'products'));
     }
+
 
     /**
      * Update the specified resource in storage.
      */
     public function update(UpdateKeywordRequest $request, Keyword $keyword)
     {
-
+        
         $keyword->update($request->validated());
-        return redirect()->route("keyword.index", $keyword);
+
+        
+        if ($request->has('products')) {
+            $keyword->products()->sync($request->input('products'));
+        } else {
+            
+            $keyword->products()->detach();
+        }
+        return redirect()->route("keyword.index");
     }
 
     /**

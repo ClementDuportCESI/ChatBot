@@ -9,10 +9,10 @@ class Product extends Model
 {
     use HasFactory;
 
-    // Les champs qui peuvent être remplis par assignation de masse
-    protected $fillable = [
-        'name',
-        'color',
-        'size',
-    ];
+    protected $fillable = ['name', 'color', 'size'];
+
+    public function keywords()
+    {
+        return $this->belongsToMany(Keyword::class);
+    }
 }

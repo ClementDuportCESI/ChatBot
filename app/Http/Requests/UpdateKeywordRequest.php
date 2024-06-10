@@ -6,23 +6,31 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateKeywordRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
+    public function authorize()
     {
-        return true;
+        return true; // Autoriser cette requête pour tous les utilisateurs
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
-    public function rules(): array
+    public function rules()
+    {
+        $keywordId = $this->route('keyword')->id; // Récupère l'ID du mot-clé actuel
+
+        return [
+            'keyword' => 'required|string|max:255|unique:keywords,keyword,' . $keywordId,
+            'products' => 'nullable|array',
+            'products.*' => 'exists:products,id',
+        ];
+    }
+
+    public function messages()
     {
         return [
-            'keyword' => 'required|string|max:255|unique:keywords,keyword',
+            'keyword.required' => 'Le champ mot-clé est obligatoire.',
+            'keyword.string' => 'Le champ mot-clé doit être une chaîne de caractères.',
+            'keyword.max' => 'Le champ mot-clé ne peut pas dépasser 255 caractères.',
+            'keyword.unique' => 'Ce mot-clé existe déjà.',
+            'products.array' => 'Le champ produits doit être un tableau.',
+            'products.*.exists' => 'Le produit sélectionné est invalide.',
         ];
     }
 }

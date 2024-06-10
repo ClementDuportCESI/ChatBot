@@ -9,8 +9,10 @@ class Keyword extends Model
 {
     use HasFactory;
 
-    // Les champs qui peuvent être remplis par assignation de masse
-    protected $fillable = [
-        'keyword',
-    ];
+    protected $fillable = ['keyword'];
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }
