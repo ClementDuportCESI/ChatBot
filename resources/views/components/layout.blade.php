@@ -8,9 +8,9 @@
     <link rel="icon" type="image/x-icon" href="">
     @vite( ['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-offWhite">
+<body class="">
 
-          <nav class="fixed top-0 z-50 w-full bg-secondary border-b border-gray-200 ">
+          <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 ">
             <div class="px-3 py-4 lg:px-5 lg:pl-3">
               <div class="flex justify-between items-center">
                 <div class="flex items-center justify-start rtl:justify-end">
