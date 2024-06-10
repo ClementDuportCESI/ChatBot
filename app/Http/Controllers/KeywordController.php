@@ -20,7 +20,7 @@ class KeywordController extends Controller
     {
         $query = $request->input('query');
 
-        $keywords = Keyword::where('name', 'LIKE', "%{$query}%")
+        $keywords = Keyword::where('keyword', 'LIKE', "%{$query}%")
             ->orderBy('created_at', 'desc')
             ->paginate(10)
             ->appends(['query' => $query]);
@@ -45,15 +45,7 @@ class KeywordController extends Controller
             $request->validated()
         );
 
-        return redirect()->route("keyword.show", $keywords);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Keyword $keyword)
-    {
-        return view('pkeyword.show', compact("keyword"));
+        return redirect()->route("keyword.index", $keywords);
     }
 
     /**
@@ -72,7 +64,7 @@ class KeywordController extends Controller
     {
 
         $keyword->update($request->validated());
-        return redirect()->route("keyword.show", $keyword);
+        return redirect()->route("keyword.index", $keyword);
     }
 
     /**
