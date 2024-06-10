@@ -1,7 +1,9 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\KeywordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +31,12 @@ Route::get('/admin/produits/ajouter', ProductController::class . "@create")->nam
 Route::post('/admin/produits/store', ProductController::class . "@store")->name("product.store");
 Route::delete('/admin/produits/{product}', ProductController::class . "@destroy")->name("product.destroy");
 Route::get('/admin/produits-recherche}', ProductController::class . "@search")->name("product.search");
+
+Route::get('/admin/mots-cles', KeywordController::class . "@index")->name("keyword.index");
+Route::get('/admin/mots-cles/modifier/{keyword}', KeywordController::class . "@edit")->name("keyword.edit");
+Route::put('/admin/mots-cles/modifier/{keyword}', KeywordController::class . "@update")->name("keyword.update");
+Route::get('/admin/mots-cles/ajouter', KeywordController::class . "@create")->name("keyword.create");
+Route::post('/admin/mots-cles/store', KeywordController::class . "@store")->name("keyword.store");
+Route::delete('/admin/mots-cles/{keyword}', KeywordController::class . "@destroy")->name("keyword.destroy");
+Route::get('/admin/mots-cles-recherche}', KeywordController::class . "@search")->name("keyword.search");
 
