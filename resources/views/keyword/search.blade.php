@@ -59,7 +59,7 @@
         
              <tr class="bg-table border-b border-black/50 text-slate-950">
                 <th scope="row" class="px-6 py-4 font-sans font-bold text-slate-950 whitespace-nowrap ">
-                   {{$keyword->name}}
+                   {{$keyword->keyword}}
                 </th>
                 <td class="flex flex-row justify-end px-6 py-4 gap-11">
                     <a href="{{route("keyword.edit", $keyword)}}" class="bg-accent rounded-3xl px-2 py-2 text-sm font-medium hover:-translate-y-1 transition-all">
