@@ -12,7 +12,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = Product::paginate(10);
+        $products = Product::orderBy('created_at', 'desc')->paginate(9);
         return view('product.index', ["products" => $products]);
     }
 
@@ -22,7 +22,7 @@ class ProductController extends Controller
 
         $products = Product::where('name', 'LIKE', "%{$query}%")
             ->orderBy('created_at', 'desc')
-            ->paginate(10)
+            ->paginate(9)
             ->appends(['query' => $query]);
 
         return view('product.search', compact('products', 'query'));
@@ -45,7 +45,7 @@ class ProductController extends Controller
             $request->validated()
         );
 
-        return redirect()->route("product.show", $products);
+        return redirect()->route("product.index", $products);
     }
 
     /**

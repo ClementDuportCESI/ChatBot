@@ -13,7 +13,7 @@ class KeywordController extends Controller
 
     public function index()
     {
-        $keywords = Keyword::orderBy('created_at', 'desc')->paginate(10);
+        $keywords = Keyword::orderBy('created_at', 'desc')->paginate(9);
         return view('keyword.index', ['keywords' => $keywords]);
     }
 
@@ -23,7 +23,7 @@ class KeywordController extends Controller
 
         $keywords = Keyword::where('keyword', 'LIKE', "%{$query}%")
             ->orderBy('created_at', 'desc')
-            ->paginate(10)
+            ->paginate(9)
             ->appends(['query' => $query]);
 
         return view('keyword.search', compact('keywords', 'query'));

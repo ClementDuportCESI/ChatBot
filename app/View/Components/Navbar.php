@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class ChatbotForm extends Component
+class Navbar extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class ChatbotForm extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.front.chatbot-form');
+        return view('components.admin.navbar');
     }
 }

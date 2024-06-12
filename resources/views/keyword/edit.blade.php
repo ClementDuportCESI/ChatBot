@@ -1,4 +1,4 @@
-<x-layout>
+<x-layoutadmin>
 <div class="mt-2 px-6">
     <div class="flex mt-3">
         <a href="{{ route('keyword.index') }}" class="hover:-translate-y-1 transition-all font-title border bg-accent text-secondary rounded-3xl px-3 py-3 text-sm font-medium">
@@ -72,4 +72,4 @@
         </form>
     </div>
 </div>
-</x-layout>
+</x-layoutadmin>

@@ -29,7 +29,7 @@
                     data.products.forEach(product => {
                         var productDiv = document.createElement('div');
                         productDiv.className = 'product-result border border-gray-300 p-2 rounded-md';
-                        productDiv.innerHTML = `<h4>${product.name}</h4><p>Taille: ${product.size}</p><p>Couleur: ${product.color}</p><button onclick="window.location.href='/products/${product.id}'" class="text-blue-500 hover:underline">Voir</button>`;
+                        productDiv.innerHTML = `<h4>${product.name}</h4><p>Taille : ${product.size}</p><p>Couleur: ${product.color}</p><button onclick="window.location.href='/produits/${product.id}'" class="text-blue-500 hover:underline">Voir</button>`;
                         resultsDiv.appendChild(productDiv);
                     });
                 } else {

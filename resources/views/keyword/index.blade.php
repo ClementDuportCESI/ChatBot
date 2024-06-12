@@ -1,4 +1,4 @@
-<x-layout>
+<x-layoutadmin>
 <div class="px-6">
     <div class="flex justify-between mb-1">
         <div class="flex flex-row gap-4">
@@ -38,7 +38,7 @@
         </form>
     </div>
     
-    {{ $keywords->links() }}
+   
 
     <div class="relative rounded-md overflow-hidden my-4">
     <table class="w-full text-sm text-left rtl:text-right text-zinc-50">
@@ -84,9 +84,9 @@
     </div>
 
     
-    
+     {{ $keywords->links() }}
     
 
 </div>
 
-</x-layout>
+</x-layoutadmin>

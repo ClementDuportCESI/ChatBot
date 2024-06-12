@@ -1,4 +1,4 @@
-<x-layout>
+<x-layoutadmin>
 <div class="px-6">
     <div class="flex justify-between mb-1">
         <div class="flex gap-4 items-center">
@@ -40,7 +40,7 @@
         </form>
     </div>
     
-    {{ $keywords->links() }}
+    @if($keywords->isNotEmpty())
 
     <div class="relative rounded-md overflow-hidden my-4">
     <table class="w-full text-sm text-left rtl:text-right text-zinc-50">
@@ -86,9 +86,12 @@
     </div>
 
     
+    {{ $keywords->links() }}
     
-    
+    @else
+        <p>Aucun mot-clé trouvé pour "{{ $query }}".</p>
+    @endif
 
 </div>
 
-</x-layout>
+</x-layoutadmin>

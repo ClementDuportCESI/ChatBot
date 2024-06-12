@@ -1,4 +1,4 @@
-<x-layout>
+<x-layoutadmin>
 
 <div class="px-6">
     <div class="flex justify-between mb-1">
@@ -44,8 +44,6 @@
     </div>
     
     @if($products->isNotEmpty())
-
-    {{ $products->links() }}
 
     <div class="relative rounded-md overflow-hidden my-4">
         <table class="w-full text-sm text-left rtl:text-right text-zinc-50">
@@ -107,4 +105,4 @@
 
 </div>
 
-</x-layout>
+</x-layoutadmin>

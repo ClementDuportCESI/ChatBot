@@ -1,4 +1,4 @@
-<x-layout>
+<x-layoutadmin>
 
 <div class="mt-2 px-6">
 
@@ -50,4 +50,4 @@
     </form>
 </div>
 </div>
-</x-layout>
+</x-layoutadmin>

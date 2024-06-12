@@ -1,4 +1,4 @@
-<x-layout>
+<x-layoutadmin>
 
 <div class="mt-2 px-6">
 
@@ -17,7 +17,7 @@
         
         <div class="mb-12">
             <label for="keyword" class="font-title block text-m font-semibold leading-6 text-gray-900">Mot-clé :</label>
-            @error("name")
+            @error("keyword")
             <div class="text-red-500">{{$message}}</div>
             @enderror
             <div class="mt-2.5">
@@ -78,4 +78,4 @@
     </form>
 </div>
 </div>
-</x-layout>
+</x-layoutadmin>

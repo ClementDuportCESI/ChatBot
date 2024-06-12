@@ -16,22 +16,25 @@ use App\Http\Controllers\KeywordController;
 |
 */
 
-Route::get('/', function () {
-    return view('home.index');
-});
+Route::get('/', function () { return view('home.index'); })->name('home.index');
+
 
 Route::post('/chatbot/search', ChatbotController::class . "@search")->name('chatbot.search');
 
-Route::get('/produits', ProductController::class . "@index")->name("home.index");
+
 Route::get('/produits/{product}', ProductController::class . "@show")->name("product.show");
+
 
 Route::get('/admin/produits', ProductController::class . "@index")->name("product.index");
 Route::get('/admin/produits/modifier/{product}', ProductController::class . "@edit")->name("product.edit");
 Route::put('/admin/produits/modifier/{product}', ProductController::class . "@update")->name("product.update");
 Route::get('/admin/produits/ajouter', ProductController::class . "@create")->name("product.create");
 Route::post('/admin/produits/store', ProductController::class . "@store")->name("product.store");
+
 Route::delete('/admin/produits/{product}', ProductController::class . "@destroy")->name("product.destroy");
 Route::get('/admin/produits-recherche}', ProductController::class . "@search")->name("product.search");
+
+
 
 Route::get('/admin/mots-cles', KeywordController::class . "@index")->name("keyword.index");
 Route::get('/admin/mots-cles/modifier/{keyword}', KeywordController::class . "@edit")->name("keyword.edit");
