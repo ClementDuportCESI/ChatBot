@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\ChatbotController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\KeywordController;
@@ -17,9 +17,10 @@ use App\Http\Controllers\KeywordController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.index');
 });
 
+Route::post('/chatbot/search', ChatbotController::class . "@search")->name('chatbot.search');
 
 Route::get('/produits', ProductController::class . "@index")->name("home.index");
 Route::get('/produits/{product}', ProductController::class . "@show")->name("product.show");
