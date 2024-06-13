@@ -65,7 +65,7 @@
             </div>
 
             <div class="mt-10">
-                <button type="submit" class="block w-full font-title border bg-accent text-background rounded-3xl px-3 py-3 text-m font-bold hover:-translate-y-1 transition-all">
+                <button type="submit" class="block w-full border rounded-3xl px-3 py-3 text-m font-bold hover:-translate-y-1 transition-all">
                     Mettre à jour
                 </button>
             </div>

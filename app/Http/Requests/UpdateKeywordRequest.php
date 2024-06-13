@@ -8,12 +8,12 @@ class UpdateKeywordRequest extends FormRequest
 {
     public function authorize()
     {
-        return true; // Autoriser cette requête pour tous les utilisateurs
+        return true;
     }
 
     public function rules()
     {
-        $keywordId = $this->route('keyword')->id; // Récupère l'ID du mot-clé actuel
+        $keywordId = $this->route('keyword')->id;
 
         return [
             'keyword' => 'required|string|max:255|unique:keywords,keyword,' . $keywordId,

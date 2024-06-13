@@ -22,16 +22,16 @@
             <a href="{{ route('product.index') }}" class="text-white text-sm">Aller dans l'espace Admin</a>
         </div>
         <div>
-          <p class="text-white font-title font-bold text-l">SneakMe</p>
+          <p class="text-white font-bold text-l">SneakMe</p>
         </div>
         <div>
           <form action="{{route("logout")}}" method="POST">
             @csrf
             <button type="submit" class="w-full flex items-center">
-                <svg class="flex-shrink-0 w-5 h-5 text-white transition duration-75 group-hover:text-accent" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <svg class="flex-shrink-0 w-5 h-5 text-white transition duration-75" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H4m12 0-4 4m4-4-4-4m3-4h2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-2"/>
                 </svg>
-                <span class="text-start flex-1 ms-3 text-white group-hover:text-accent font-title">Se déconnecter</span>
+                <span class="text-start flex-1 ms-3 text-white font-title">Se déconnecter</span>
             </button>
           </form>
         </div>
@@ -44,7 +44,7 @@
         <div class="flex items-center justify-start rtl:justify-end">
           <a href="/admin" class="flex gap-4 ms-2 md:me-24">
             <img src="" alt="Logo SneakMe" class="w-20">
-            <span class="self-center text-accent text-4xl font-semibold whitespace-nowrap font-title">SneakMe</span>
+            <span class="self-center text-4xl font-semibold whitespace-nowrap">SneakMe</span>
           </a>
         </div>
         @guest

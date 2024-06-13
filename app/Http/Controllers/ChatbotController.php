@@ -13,14 +13,14 @@ class ChatbotController extends Controller
         $query = $request->input('query');
         $keywordsArray = array_filter(explode(' ', $query));
 
-        // Rechercher des mots-clés similaires dans la base de données
+        
         $keywords = Keyword::where(function ($q) use ($keywordsArray) {
             foreach ($keywordsArray as $keyword) {
                 $q->orWhere('keyword', 'LIKE', "%{$keyword}%");
             }
         })->pluck('id');
 
-        // Rechercher des produits associés à ces mots-clés et aux critères supplémentaires
+
         $products = Product::where(function ($q) use ($keywordsArray) {
             foreach ($keywordsArray as $keyword) {
                 $q->orWhere('name', 'LIKE', "%{$keyword}%")

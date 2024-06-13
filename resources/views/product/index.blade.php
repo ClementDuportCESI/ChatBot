@@ -2,8 +2,8 @@
 <div class="px-6">
     <div class="flex justify-between mb-1">
         <div class="flex flex-row gap-4">
-            <h1 class="text-3xl font-bold mt-4 mb-2 font-title text-accent">Produits</h1>
-            <a href="{{route("product.create")}}" class="bg-accent rounded-3xl mt-3 mb-2 px-2 pt-2 text-sm font-medium hover:-translate-y-1 transition-all">
+            <h1 class="text-3xl font-bold mt-4 mb-2">Produits</h1>
+            <a href="{{route("product.create")}}" class="rounded-3xl mt-3 mb-2 px-2 pt-2 text-sm font-medium hover:-translate-y-1 transition-all">
                 <svg class="w-6 h-6 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/>
                 </svg>
@@ -24,13 +24,13 @@
                     type="search"
                     id="default-search"
                     name="query"
-                    class="border-2 autofill:text-black placeholder:text-black text-black bg-accent block w-full p-4 ps-10 pr-[30%] text-sm table rounded-lg"
+                    class="border-2 autofill:text-black placeholder:text-black text-black block w-full p-4 ps-10 pr-[30%] text-sm table rounded-lg"
                     placeholder="Rechercher un produit"
                     required
                 />
                 <button
                     type="submit"
-                    class="bg-accent absolute end-2.5 bottom-2.5 rounded-md transition-all text-xs inline-block font-title font-bold border-2 py-2 px-4 shadow-buttonLightBase hover:shadow-buttonLightHover hover:text-accent text-secondary border-secondary"
+                    class="absolute end-2.5 bottom-2.5 rounded-md transition-all text-xs inline-block font-bold border-2 py-2 px-4"
                 >
                     Rechercher
                 </button>
@@ -44,16 +44,16 @@
     <table class="w-full text-sm text-left rtl:text-right text-zinc-50">
         <thead class="text-xs text-zinc-50 uppercase border-b border-black/50">
             <tr>
-                <th scope="col" class="font-title font-bold text-black px-6 py-3">
+                <th scope="col" class="font-bold text-black px-6 py-3">
                     Nom
                 </th>
-                <th scope="col" class="font-title font-bold text-black px-6 py-3">
+                <th scope="col" class="font-bold text-black px-6 py-3">
                     Couleur
                 </th>
-                <th scope="col" class="font-title font-bold text-black px-6 py-3">
+                <th scope="col" class="font-bold text-black px-6 py-3">
                     Taille
                 </th>
-                <th scope="col" class="flex justify-end font-title font-bold text-black px-6 py-3">
+                <th scope="col" class="flex justify-end font-bold text-black px-6 py-3">
                     Modifier / Supprimer
                 </th>
             </tr>
@@ -62,13 +62,13 @@
             @foreach($products as $product)
         
              <tr class="bg-table border-b border-black/50 text-slate-950">
-                <th scope="row" class="px-6 py-4 font-sans font-bold text-slate-950 whitespace-nowrap ">
+                <th scope="row" class="px-6 py-4 font-bold text-slate-950 whitespace-nowrap ">
                    {{$product->name}}
                 </th>
-                <td scope="row" class="px-6 py-4 font-sans font-bold text-slate-950 whitespace-nowrap ">
+                <td scope="row" class="px-6 py-4 font-bold text-slate-950 whitespace-nowrap ">
                     {{$product->color}}
                 </td>
-                <td scope="row" class="px-6 py-4 font-sans font-bold text-slate-950 whitespace-nowrap ">
+                <td scope="row" class="px-6 py-4 font-bold text-slate-950 whitespace-nowrap ">
                     {{$product->size}}
                 </td>
                 <td class="flex flex-row justify-end px-6 py-4 gap-11">
@@ -80,7 +80,7 @@
                     <form method="post" action="{{route('product.destroy', $product)}}">
                         @csrf 
                         @method("DELETE")
-                        <button type="submit" class="border-2 border-accent bg-secondary rounded-3xl px-2 py-2 text-sm font-medium hover:-translate-y-1 transition-all">
+                        <button type="submit" class="border-2 rounded-3xl px-2 py-2 text-sm font-medium hover:-translate-y-1 transition-all">
                             <svg class="w-5 h-5 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
                             </svg>

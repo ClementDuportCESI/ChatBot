@@ -3,7 +3,7 @@
 <div class="mt-2 px-6">
 
     <div class="flex mt-3">
-        <a href="{{ URL::previous() }}" class="hover:-translate-y-1 transition-all font-title border bg-accent text-secondary rounded-3xl px-3 py-3 text-sm font-medium">
+        <a href="{{ URL::previous() }}" class="hover:-translate-y-1 transition-all border rounded-3xl px-3 py-3 text-sm font-medium">
             <svg class="w-6 h-6 text-background" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
             </svg>
@@ -14,7 +14,7 @@
         <form action="{{ route('users.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-4">
-                <label for="name" class="font-title block text-m font-semibold leading-6 text-gray-900">Nom Prénom</label>
+                <label for="name" class="block text-m font-semibold leading-6 text-gray-900">Nom Prénom</label>
                 @error("name")
                 <div class="text-red-500">{{$message}}</div>
                 @enderror
@@ -23,7 +23,7 @@
                 </div>
             </div>
              <div class="mb-4">
-                <label for="role" class="font-title block text-m font-semibold leading-6 text-gray-900">Role</label>
+                <label for="role" class="block text-m font-semibold leading-6 text-gray-900">Role</label>
                 @error("role")
                 <div class="text-red-500">{{$message}}</div>
                 @enderror
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="mb-4">
-                <label for="email" class="font-title block text-m font-semibold leading-6 text-gray-900">Email</label>
+                <label for="email" class="block text-m font-semibold leading-6 text-gray-900">Email</label>
                 @error("email")
                 <div class="text-red-500">{{$message}}</div>
                 @enderror
@@ -46,7 +46,7 @@
                 </div>
             </div>
              <div class="mb-4">
-                <label for="password" class="font-title block text-m font-semibold leading-6 text-gray-900">Mot de passe</label>
+                <label for="password" class="block text-m font-semibold leading-6 text-gray-900">Mot de passe</label>
                 @error("password")
                 <div class="text-red-500">{{$message}}</div>
                 @enderror
@@ -55,7 +55,7 @@
                 </div>
             </div>
              <div class="mb-4">
-                <label for="password_confirmation" class="font-title block text-m font-semibold leading-6 text-gray-900">Mot de passe à confirmer</label>
+                <label for="password_confirmation" class="block text-m font-semibold leading-6 text-gray-900">Mot de passe à confirmer</label>
                 @error("password_confirmation")
                 <div class="text-red-500">{{$message}}</div>
                 @enderror
@@ -66,7 +66,7 @@
             
 
             <div class="mt-10">
-                <button type="submit" class="block w-full font-title border bg-accent text-background rounded-3xl px-3 py-3 text-m font-bold hover:-translate-y-1 transition-all">
+                <button type="submit" class="block w-full border rounded-3xl px-3 py-3 text-m font-bold hover:-translate-y-1 transition-all">
                     Créer
                 </button>
             </div>
