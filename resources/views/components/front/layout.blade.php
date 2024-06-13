@@ -21,9 +21,9 @@
             <a href="{{ route('product.index') }}" class="text-white text-sm">Aller dans l'espace Admin</a>
         </div>
         <div>
-          {{-- <p class="text-white font-title font-bold text-l">Bienvenue sur l'espace Admin, {{Auth::user()->name}}</p> --}}
+          <p class="text-white font-title font-bold text-l">SneakMe</p>
         </div>
-        {{-- <div>
+        <div>
           <form action="{{route("logout")}}" method="POST">
             @csrf
             <button type="submit" class="w-full flex items-center">
@@ -33,7 +33,7 @@
                 <span class="text-start flex-1 ms-3 text-white group-hover:text-accent font-title">Se déconnecter</span>
             </button>
           </form>
-        </div> --}}
+        </div>
       </div>
     </div>
     @endauth
@@ -46,9 +46,9 @@
             <span class="self-center text-accent text-4xl font-semibold whitespace-nowrap font-title">SneakMe</span>
           </a>
         </div>
-        <div>
-          {{-- <p class="text-accent font-title font-bold text-l">Bonjour {{Auth::user()->name}}</p> --}}
-        </div>
+        @guest
+        <a href="{{ route('login')}}">Se connecter</a>
+        @endguest
       </div>
     </div>
    

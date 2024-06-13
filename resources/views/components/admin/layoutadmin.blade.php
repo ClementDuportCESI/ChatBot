@@ -23,9 +23,9 @@
                     <a href="{{ route('home.index') }}" class="text-white text-sm">Aller sur le site</a>
                 </div>
                 <div>
-                  {{-- <p class="text-white font-title font-bold text-l">Bienvenue sur l'espace Admin, {{Auth::user()->name}}</p> --}}
+                  <p class="text-white font-title text-l">Bienvenue sur l'espace Admin, {{Auth::user()->name}}</p>
                 </div>
-                {{-- <div>
+                <div>
                   <form action="{{route("logout")}}" method="POST">
                     @csrf
                     <button type="submit" class="w-full flex items-center">
@@ -35,7 +35,7 @@
                         <span class="text-start flex-1 ms-3 text-white group-hover:text-accent font-title">Se déconnecter</span>
                     </button>
                   </form>
-                </div> --}}
+                </div>
               </div>
             </div>
           </nav>
