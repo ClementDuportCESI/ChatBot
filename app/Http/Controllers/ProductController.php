@@ -71,7 +71,7 @@ class ProductController extends Controller
     {
 
         $product->update($request->validated());
-        return redirect()->route("product.show", $product);
+        return redirect()->route("product.index");
     }
 
     /**

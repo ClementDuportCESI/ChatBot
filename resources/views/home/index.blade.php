@@ -23,17 +23,17 @@
             .then(response => response.json())
             .then(data => {
                 var resultsDiv = document.getElementById('chatbot-results');
-                resultsDiv.className = 'grid grid-cols-2 gap-4';
                 resultsDiv.innerHTML = '';
                 if (data.products.length > 0) {
                     data.products.forEach(product => {
                         var productDiv = document.createElement('div');
+                        resultsDiv.className = 'grid grid-cols-2 gap-4';
                         productDiv.className = 'product-result border border-gray-300 p-2 rounded-md';
                         productDiv.innerHTML = `<h4>${product.name}</h4><p>Taille : ${product.size}</p><p>Couleur: ${product.color}</p><button onclick="window.location.href='/produits/${product.id}'" class="text-blue-500 hover:underline">Voir</button>`;
                         resultsDiv.appendChild(productDiv);
                     });
                 } else {
-                    resultsDiv.innerHTML = '<p class="text-red-500">Aucun résultat</p>';
+                    resultsDiv.innerHTML = '<div class="flex items-center gap-4"><p><span class="text-red-500">Aucun résultat</span>, contactez-nous :</p> <a href="/contact" class="rounded-md text-white bg-black py-2 px-3">Page Contact</a></div>';
                 }
             });
         });
